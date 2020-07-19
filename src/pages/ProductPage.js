@@ -7,9 +7,11 @@ import Loading from '../components/Loading'
 
 const ProductPage = () => {
   let { id } = useParams()
+
   const { fetchProductWithId, addItemToCheckout, product } = useContext(
     ShopContext
   )
+
   // const [product, setProduct] = useState(null)
   // async function fetchData() {
   //     const fetchedProduct = await fetchProductWithId(id)
@@ -26,6 +28,7 @@ const ProductPage = () => {
   }, [fetchProductWithId, id])
 
   if (!product.title) return <Loading />
+
   return (
     <Container>
       <Row m={{ b: '2rem' }} p="2rem">
